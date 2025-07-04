@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <title>Favoritos - Mundial de Clubes</title>
+</head>
+<body>
+  <header class="hero">
+    <img src="img/mundial" alt="Fondo Mundial de Clubes" class="hero-img" />
+    <div class="hero-overlay">
+      <h1>Favoritos - Mundial de Clubes 2025</h1>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="page2.html" class="active">Favoritos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="favoritos-section" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+  </main>
+
+  <footer>
+    <div class="alumno">
+      <p>Nombre: Ramiro</p>
+      <p>Apellido: Buyé</p>
+      <p>Materia: Aplicaciones Web Progresivas</p>
+      <p>Turno: Tarde</p>
+      <p>Comisión: DWT3AP</p>
+      <p>Año de cursada: 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const equipos = [
+  { id: 'palmeiras', nombre: 'Palmeiras', pais: 'Brasil', descripcion: 'Club brasileño con gran tradición en la Libertadores.', img: 'img/palmeiras.png' },
+  { id: 'intermiami', nombre: 'Inter Miami', pais: 'Estados Unidos', descripcion: 'Equipo emergente de la MLS fundado por David Beckham.', img: 'img/intermiami.png' },
+  { id: 'alahly', nombre: 'Al Ahly', pais: 'Egipto', descripcion: 'Club más laureado de África, con gran historia continental.', img: 'img/ahly.png' },
+  { id: 'porto', nombre: 'FC Porto', pais: 'Portugal', descripcion: 'Potente club portugués con títulos europeos.', img: 'img/porto.png' },
+  { id: 'psg', nombre: 'Paris Saint-Germain', pais: 'Francia', descripcion: 'Club francés, potencia europea.', img: 'img/psg.png' },
+  { id: 'atlmadrid', nombre: 'Atlético de Madrid', pais: 'España', descripcion: 'Firme club español.', img: 'img/atlmadrid.png' },
+  { id: 'botafogo', nombre: 'Botafogo', pais: 'Brasil', descripcion: 'Tradición brasileña.', img: 'img/botafogo.png' },
+  { id: 'seattle', nombre: 'Seattle Sounders FC', pais: 'Estados Unidos', descripcion: 'Representante MLS de EE.UU.', img: 'img/seattle.png' },
+  { id: 'bayern', nombre: 'FC Bayern München', pais: 'Alemania', descripcion: 'Dominador histórico alemán.', img: 'img/bayern.png' },
+  { id: 'auckland', nombre: 'Auckland City FC', pais: 'Nueva Zelanda', descripcion: 'Potencia neozelandesa.', img: 'img/auckland.png' },
+  { id: 'boca', nombre: 'CA Boca Juniors', pais: 'Argentina', descripcion: 'Histórico argentino.', img: 'img/boca.png' },
+  { id: 'benfica', nombre: 'SL Benfica', pais: 'Portugal', descripcion: 'Gran club portugués.', img: 'img/benfica.png' },
+  { id: 'flamengo', nombre: 'CR Flamengo', pais: 'Brasil', descripcion: 'Potencia brasileña.', img: 'img/flamengo.png' },
+  { id: 'esperance', nombre: 'Espérance Sportive de Tunis', pais: 'Túnez', descripcion: 'Gran club tunecino.', img: 'img/esperance.png' },
+  { id: 'chelsea', nombre: 'Chelsea FC', pais: 'Inglaterra', descripcion: 'Histórico inglés.', img: 'img/chelsea.png' },
+  { id: 'lafc', nombre: 'LAFC', pais: 'Estados Unidos', descripcion: 'Club MLS de Los Ángeles.', img: 'img/lafc.png' },
+  { id: 'river', nombre: 'CA River Plate', pais: 'Argentina', descripcion: 'Gigante argentino.', img: 'img/river.png' },
+  { id: 'urawa', nombre: 'Urawa Red Diamonds', pais: 'Japón', descripcion: 'Club japonés con historia.', img: 'img/urawa.png' },
+  { id: 'monterrey', nombre: 'CF Monterrey', pais: 'México', descripcion: 'Fuerza mexicana.', img: 'img/monterrey.png' },
+  { id: 'inter', nombre: 'FC Internazionale Milano', pais: 'Italia', descripcion: 'Histórico italiano.', img: 'img/inter.png' },
+  { id: 'fluminense', nombre: 'Fluminense FC', pais: 'Brasil', descripcion: 'Club brasileño tradicional.', img: 'img/fluminense.png' },
+  { id: 'borussia', nombre: 'Borussia Dortmund', pais: 'Alemania', descripcion: 'Potencia alemana.', img: 'img/borussia.png' },
+  { id: 'ulsan', nombre: 'Ulsan Hyundai', pais: 'Corea del Sur', descripcion: 'Club surcoreano destacado.', img: 'img/ulsan.png' },
+  { id: 'mamelodi', nombre: 'Mamelodi Sundowns FC', pais: 'Sudáfrica', descripcion: 'Líder sudafricano.', img: 'img/mamelodi.png' },
+  { id: 'mancity', nombre: 'Manchester City', pais: 'Inglaterra', descripcion: 'Gigante inglés.', img: 'img/mancity.png' },
+  { id: 'wydad', nombre: 'Wydad AC', pais: 'Marruecos', descripcion: 'Potencia marroquí.', img: 'img/wydad.png' },
+  { id: 'alain', nombre: 'Al Ain FC', pais: 'Emiratos Árabes Unidos', descripcion: 'Club de Emiratos Árabes Unidos.', img: 'img/alain.png' },
+  { id: 'juve', nombre: 'Juventus FC', pais: 'Italia', descripcion: 'Tradicional club italiano.', img: 'img/juve.png' },
+  { id: 'realmadrid', nombre: 'Real Madrid C. F.', pais: 'España', descripcion: 'Club histórico español.', img: 'img/realmadrid.png' },
+  { id: 'alhilal', nombre: 'Al Hilal', pais: 'Arabia Saudita', descripcion: 'Gran club saudí.', img: 'img/alhilal.png' },
+  { id: 'pachuca', nombre: 'CF Pachuca', pais: 'México', descripcion: 'Club mexicano con tradición.', img: 'img/pachuca.png' },
+  { id: 'salzburgo', nombre: 'FC Salzburg', pais: 'Austria', descripcion: 'Club austríaco con gran desarrollo.', img: 'img/salzburgo.png' }
+];
+
+    const favoritosSection = document.getElementById('favoritos-section');
+
+    let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+
+    function mostrarFavoritos() {
+      favoritosSection.innerHTML = '';
+
+      if (favoritos.length === 0) {
+        favoritosSection.innerHTML = '<p>No tenés equipos favoritos aún. Volvé a la página principal y agregá algunos.</p>';
+        return;
+      }
+
+      favoritos.forEach(id => {
+        const equipo = equipos.find(eq => eq.id === id);
+        if (!equipo) return; 
+
+        const card = document.createElement('section');
+        card.className = 'card';
+        card.style.display = 'flex';
+        card.style.alignItems = 'center';
+        card.style.marginBottom = '1rem';
+        card.innerHTML = `
+          <img src="${equipo.img}" alt="${equipo.nombre}" width="80" height="80" style="margin-right: 1rem; object-fit: contain;">
+          <div>
+            <h3>${equipo.nombre}</h3>
+            <p><strong>País:</strong> ${equipo.pais}</p>
+            <p>${equipo.descripcion}</p>
+            <button class="btn-quitar" data-id="${equipo.id}" style="
+              background-color: #ff4655; 
+              color: white; 
+              border: none; 
+              padding: 0.5rem 1rem; 
+              border-radius: 5px; 
+              cursor: pointer;
+              font-weight: 700;
+            ">Quitar de favoritos</button>
+          </div>
+        `;
+        favoritosSection.appendChild(card);
+      });
+
+     
+      document.querySelectorAll('.btn-quitar').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          favoritos = favoritos.filter(favId => favId !== id);
+          localStorage.setItem('favoritos', JSON.stringify(favoritos));
+          mostrarFavoritos();
+        });
+      });
+    }
+
+    mostrarFavoritos();
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B2240" />
+  <title>Mundial de Clubes 2025</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header class="hero">
+    <img src="img/mundial" alt="Fondo Mundial de Clubes" class="hero-img">
+    <div class="hero-overlay">
+      <h1>Mundial de Clubes 2025</h1>
+      <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="page2.html">Favoritos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="portal-equipos" class="wiki-section">
+      <h2>🌍 Equipos Participantes</h2>
+      <p>Bienvenido al <strong>Portal del Mundial de Clubes</strong>, donde podrás explorar a todos los equipos que competirán en la edición 2025. Desde gigantes europeos hasta sorpresas africanas, cada club trae historia, talento y pasión.</p>
+      <ul>
+        <li>Conocer detalles clave de cada club.</li>
+        <li>Ver el país de origen y su trayectoria.</li>
+        <li>Marcar tus equipos favoritos para seguirlos de cerca.</li>
+      </ul>
+      <blockquote>
+        ⚽ ¿A quién alentás para levantar la copa?
+      </blockquote>
+      <button id="install-btn" style="display: none;">📲 Instalar app</button>
+    </section>
+
+    <section id="buscador-section">
+      <input type="text" id="buscador" placeholder="Buscar equipo..." />
+    </section>
+
+    <section id="equipos-section"></section>
+  </main>
+
+  <section id="modal" class="modal oculto">
+    <div class="modal-contenido">
+      <span id="cerrar-modal">&times;</span>
+      <div id="detalle-equipo"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="alumno">
+      <p>Nombre: Ramiro</p>
+      <p>Apellido: Buyé</p>
+      <p>Materia: Aplicaciones Web Progresivas</p>
+      <p>Turno: Tarde</p>
+      <p>Comisión: DWT3AP</p>
+      <p>Año de cursada: 2025</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log("Service Worker registrado ✅", reg))
+        .catch(err => console.error("Error al registrar el Service Worker ❌", err));
+    }
+  </script>
+</body>
+</html>
